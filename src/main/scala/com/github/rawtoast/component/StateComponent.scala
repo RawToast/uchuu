@@ -1,23 +1,23 @@
 package com.github.rawtoast.component
 
 import com.badlogic.ashley.core.Component
+
 import java.text.Normalizer
 
 final case class StateComponent(
     isLooping: Boolean = false,
-    time: Float = 0f,
-    state: State = State.STATE_NORMAL
-) extends Component
+    var time: Float = 0f,
+    var state: StateComponent.State = State.NORMAL
+) extends Component:
+  import StateComponent.State
 
-enum State:
-  // Probably can remove the STATE_ prefix
-  case STATE_NORMAL
-  case STATE_JUMPING
-  case STATE_FALLING
-  case STATE_MOVING
-  case STATE_HIT
+  def isNormalOrMoving: Boolean =
+    state == State.NORMAL || state == State.MOVING
 
 object StateComponent:
-  // Might not need this either
-  def set(component: StateComponent, state: State): StateComponent =
-    component.copy(state = state)
+  enum State:
+    case NORMAL
+    case JUMPING
+    case FALLING
+    case MOVING
+    case HIT

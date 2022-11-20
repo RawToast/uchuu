@@ -4,5 +4,5 @@ import com.badlogic.ashley.core.Component;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 final case class TextureComponent(
-    region: TextureRegion
+    var region: TextureRegion
 ) extends Component
