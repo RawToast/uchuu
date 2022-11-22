@@ -4,4 +4,4 @@ import com.badlogic.gdx.backends.lwjgl3.{Lwjgl3Application, Lwjgl3ApplicationCon
 
 object Main extends App:
     val config = new Lwjgl3ApplicationConfiguration
-    new Lwjgl3Application(new MainGame, config)
+    new Lwjgl3Application(new Uchuu, config)
