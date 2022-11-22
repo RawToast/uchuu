@@ -3,7 +3,7 @@ package com.github.rawtoast.component
 import com.badlogic.ashley.core.Component
 
 import com.badlogic.gdx.math.Vector2
-import com.badlogic.gdx.math.Vector3;
+import com.badlogic.gdx.math.Vector3
 
 case class TransformComponent(
     isHidden: Boolean = false,
