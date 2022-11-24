@@ -11,11 +11,14 @@ import com.github.rawtoast.view.PreferencesScreen
 final case class Uchuu() extends Game:
   import Uchuu.Screen._
 
+  // Tempted to pass these in as constructor parameters
+  lazy val loadingScreen = LoadingScreen(this)
+  lazy val preferences = AppPreferences()
+
+  lazy val mainScreen = MainScreen(this)
   lazy val menuScreen = MenuScreen(this)
   lazy val preferencesScreen = PreferencesScreen(this)
-  lazy val mainScreen = MainScreen(this)
   lazy val endGameScreen = EndScreen(this)
-  lazy val loadingScreen = LoadingScreen(this)
 
   override def create(): Unit =
     setScreen(menuScreen)
