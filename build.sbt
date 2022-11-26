@@ -7,6 +7,7 @@ import sbt.IO._
 import scala.collection.convert.wrapAll._
 
 val libgdxVersion = "1.11.0"
+val gdxControllersVersion = "2.2.2"
 // logLevel := Level.Debug
 
 name := "uchuu"
@@ -24,6 +25,7 @@ libraryDependencies ++= Seq(
   "com.badlogicgames.gdx" % "gdx-box2d" % libgdxVersion,
 
   "com.badlogicgames.gdx" % "gdx-platform" % libgdxVersion classifier "natives-desktop",
+  "com.badlogicgames.gdx" % "gdx-box2d-platform" % libgdxVersion classifier "natives-desktop",
   "com.badlogicgames.ashley" % "ashley" % "1.7.3"
 )
 javaOptions ++= Seq(
